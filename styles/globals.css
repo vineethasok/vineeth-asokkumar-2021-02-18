@@ -53,18 +53,19 @@ footer {
 }
 
 .company-container {
-  @apply flex flex-col w-full text-left bg-white p-8;
+  @apply flex flex-col w-full text-left bg-white p-8 mb-8;
 }
 
 .filters-container {
   width: 250px;
-  margin: 0 20px;
+  margin-right: 20px;
   @apply hidden;
 }
 
 
 .search-bar {
   @apply relative text-gray-600 w-auto flex items-center border-2 border-gray-300 bg-white;
+  margin: 0 2px;
 }
 
 .search-bar svg {
@@ -80,17 +81,27 @@ footer {
 i.arrow {
   height: 20px;
   width: 1px;
-  display: inline-block;
+  @apply inline-block;
+}
 
-  &.left {
-    transform: rotate(-45deg);
-    border-left: 1px solid #000;
-  }
+.arrow.left, .arrow.right {
+  @apply border-0 border-l border-solid border-black;
+}
+.arrow.left {
+  transform: rotate(-45deg);
+}
 
-  &.right {
-    border-left: 1px solid #000;
-    transform: rotate(45deg) translate(6px, -6px);
-  }
+.arrow.right {
+  transform: rotate(45deg) translate(6px, -6px);
+}
+
+.job-container {
+  @apply flex;
+  margin: 0 2px;
+}
+
+.company {
+  @apply bg-white w-full;
 }
 
 @screen md {
@@ -101,6 +112,7 @@ i.arrow {
     @apply block;
   }
   .search-bar {
-    margin: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
 }

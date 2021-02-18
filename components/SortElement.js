@@ -21,7 +21,7 @@ const SortElement = ({ name, title, value, sortFn}) => {
   }
 
   return (
-    <div className="cursor-pointer" key={name} onClick={() => sortNow() }>
+    <div className="cursor-pointer ml-4" key={name} onClick={() => sortNow() }>
       {title} <i className={sortClass}></i>
     </div>
   )
