@@ -48,13 +48,25 @@ nav {
   right: -0.5rem;
 }
 
-@screen md {
+footer {
+  @apply bg-white relative pt-1 pb-4 ;
+}
 
+.company-container {
+  @apply flex flex-col w-full text-left bg-white p-8;
+}
+
+.filters-container {
+  width: 250px;
+  margin: 0 20px;
+  @apply hidden;
+}
+
+@screen md {
   #mobile-contents.active {
     @apply hidden !important;
   }
-}
-
-footer {
-  @apply bg-white relative pt-1 pb-4 ;
+  .filters-container {
+     @apply block;
+  }
 }
