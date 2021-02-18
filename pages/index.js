@@ -5,10 +5,11 @@ import Head from 'next/head'
 import SearchBar from '../components/SearchBar'
 import SortElement from '../components/SortElement'
 import CompanyList from '../components/CompanyList'
+import FilterListElement from '../components/FilterListElement'
 
 let url = process.env.NODE_ENV === "development" ? "http://localhost:3000/api" : "https://zen-carson-68103d.netlify.app/api";
 
-const Index = () => {
+const Index = ({ filters }) => {
   const router = useRouter();
 
   let [searchValue, setSearchValue] = useState(router.query.keyword || '')
@@ -83,7 +84,7 @@ const Index = () => {
 
       <div className="job-container">
         <div className="filters-container">
-          FILTER BOX
+          {Object.entries(filters).map(([key, value]) => <FilterListElement items={value} key={key} name={key} />)}
         </div>
         <div className="company-container">
           <div className="flex justify-between">
@@ -101,4 +102,11 @@ const Index = () => {
     </>
   )
 }
+
+Index.getInitialProps = async ({ query }) => {
+  const filterResponse = await fetch(`${url}/filters`)
+  const filters = await filterResponse.json()
+  return { filters: filters }
+}
+
 export default Index

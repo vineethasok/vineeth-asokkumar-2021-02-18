@@ -117,6 +117,45 @@ i.arrow {
   @apply block;
 }
 
+.filters {
+  @apply p-4;
+}
+
+.filter-link span {
+  @apply text-xs text-gray-400;
+}
+
+/* The Modal (background) */
+.modal {
+  @apply fixed inset-0 overflow-hidden bg-opacity-50 bg-black;
+  z-index: 1;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  @apply bg-white p-4 m-auto shadow-lg;
+  padding: 20px;
+  max-width: 80%;
+  margin-top: 15%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  @apply text-right font-bold;
+  font-size: 28px;
+}
+
+.close:hover,
+.close:focus {
+  @apply cursor-pointer text-black no-underline;
+}
+
+.modal .name {
+  text-transform: capitalize;
+  @apply font-bold text-lg;
+}
+
 @screen md {
   #mobile-contents.active {
     @apply hidden !important;

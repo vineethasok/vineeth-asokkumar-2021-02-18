@@ -22,7 +22,7 @@ const CompanyList = ({ companies }) => {
       {companies.map((company, index) =>
         <div className="flex flex-col" key={index}>
           <button className="company-accordion accordion focus:outline-none" onClick={(event) => toggleAccordion(event)}>
-            <div className="rounded bg-gray-800 text-white h-8 w-8">{company.name.slice(0, 2)}</div>
+            <div className="rounded bg-gray-800 text-white h-7 w-8">{company.name.slice(0, 2)}</div>
             <div className="ml-8 text-left">{company.total_jobs_in_hospital} jobs for {company.name}</div>
           </button>
           <div className="panel">

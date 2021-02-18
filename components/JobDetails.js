@@ -4,16 +4,16 @@ const JobDetails = ({ job }) => {
   return (
     <div className="flex flex-wrap">
       <div className="w-full md:w-2/3 flex flex-wrap">
-          <div class="w-full md:w-1/2 font-bold mt-3">Department:</div>
-          <div class="w-full md:w-1/2">
+          <div className="w-full md:w-1/2 font-bold mt-3">Department:</div>
+          <div className="w-full md:w-1/2">
             {job.department.join()}
         </div>
-        <div class="w-full md:w-1/2 font-bold mt-3">Hours / Shifts:</div>
-        <div class="w-full md:w-1/2">
+        <div className="w-full md:w-1/2 font-bold mt-3">Hours / Shifts:</div>
+        <div className="w-full md:w-1/2">
           {job.hours.join(" hours - ")} hours / {job.work_schedule}
         </div>
-        <div class="w-full md:w-1/2 font-bold mt-3">Summary:</div>
-        <div class="w-full md:w-1/2">
+        <div className="w-full md:w-1/2 font-bold mt-3">Summary:</div>
+        <div className="w-full md:w-1/2">
           {job.description}
         </div>
 
