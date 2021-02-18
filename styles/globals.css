@@ -62,11 +62,27 @@ footer {
   @apply hidden;
 }
 
+
+.search-bar {
+  @apply relative text-gray-600 w-auto flex items-center border-2 border-gray-300 bg-white;
+}
+
+.search-bar svg {
+  @apply pl-2;
+}
+.search-input {
+  @apply w-full;
+  @apply h-8 px-5 pr-16 rounded-lg text-sm pl-2;
+}
+
 @screen md {
   #mobile-contents.active {
     @apply hidden !important;
   }
   .filters-container {
-     @apply block;
+    @apply block;
+  }
+  .search-bar {
+    margin: 20px;
   }
 }
