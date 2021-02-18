@@ -89,9 +89,9 @@ const Index = () => {
           <div className="flex justify-between">
             <p className="font-bold">{totalPostings()} Job Postings</p>
             <div className="hidden md:flex justify-end">
-              {sortOptions.map((sortElement, index) => <>
+              {sortOptions.map((sortElement, index) =>
                 <SortElement name={sortElement} title={sortOptionsName[index]} value={sortUrlParams[sortElement]} sortFn={updateSort} key={index} />
-              </>)}
+              )}
             </div>
 
           </div>

@@ -88,6 +88,7 @@ i.arrow {
   @apply border-0 border-l border-solid border-black;
 }
 .arrow.left {
+  content: "V";
   transform: rotate(-45deg);
 }
 
@@ -102,6 +103,18 @@ i.arrow {
 
 .company {
   @apply bg-white w-full;
+}
+
+.accordion {
+ @apply flex flex-row mt-2 border-b py-4;
+}
+
+.accordion ~ .panel {
+  @apply hidden;
+}
+
+.accordion.active ~ .panel {
+  @apply block;
 }
 
 @screen md {
