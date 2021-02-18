@@ -75,6 +75,24 @@ footer {
   @apply h-8 px-5 pr-16 rounded-lg text-sm pl-2;
 }
 
+
+
+i.arrow {
+  height: 20px;
+  width: 1px;
+  display: inline-block;
+
+  &.left {
+    transform: rotate(-45deg);
+    border-left: 1px solid #000;
+  }
+
+  &.right {
+    border-left: 1px solid #000;
+    transform: rotate(45deg) translate(6px, -6px);
+  }
+}
+
 @screen md {
   #mobile-contents.active {
     @apply hidden !important;
