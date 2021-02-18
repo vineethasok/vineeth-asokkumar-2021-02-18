@@ -1,3 +1,44 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+nav {
+  @apply bg-white relative;
+}
+
+#menu svg {
+  @apply h-6 w-6;
+}
+
+#menu .close {
+  @apply hidden;
+}
+
+#menu .open {
+  @apply block;
+}
+
+#mobile-contents.active, #menu.active .close {
+  @apply block !important;
+}
+
+#menu.active .open {
+  @apply hidden !important;
+}
+
+.user-profile {
+  @apply h-8 w-8 rounded-full flex justify-center items-center bg-blue-600 text-white;
+}
+
+.user-profile::before {
+  content: "2";
+  @apply absolute h-4 w-4 rounded-full flex justify-center items-center bg-red-600 border-2 border-white border-solid top-0 text-xs;
+  right: -0.5rem;
+}
+
+@screen md {
+
+  #mobile-contents.active {
+    @apply hidden !important;
+  }
+}
