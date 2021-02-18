@@ -1,9 +1,12 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 
 import Head from 'next/head'
 import SearchBar from '../components/SearchBar'
 import SortElement from '../components/SortElement'
+import CompanyList from '../components/CompanyList'
+
+let url = process.env.NODE_ENV === "development" ? "http://localhost:3000/api" : "https://zen-carson-68103d.netlify.app/api";
 
 const Index = () => {
   const router = useRouter();
@@ -32,10 +35,42 @@ const Index = () => {
     setSortValues(newValue)
   }
 
+  let [jobs, setJobs] = useState([])
+
+  useEffect(() => {
+    let query = []
+
+    let sortQuery = ''
+    Object.entries(sortValues).forEach(([key, value]) => {
+      if (value) {
+        sortQuery += `${key}:${value},`
+      }
+    })
+    if (sortQuery.length) {
+      query.push(`sort=${sortQuery.slice(0, -1)}`)
+    }
+
+    if (searchValue) {
+      query.push(`keyword=${searchValue}`)
+    }
+
+    if (query) {
+      query = `?${query.join("&")}`
+    }
+
+    router.push(`/${query}`, undefined, { shallow: true })
+    fetch(`${url}/jobs${query}`)
+      .then(response => response.json())
+      .then(({ jobs }) => {
+        setJobs(jobs)
+      });
+  }, [sortValues, searchValue])
 
 
   const totalPostings = () => {
-    return 1;
+    let total = 0;
+    jobs.forEach(company => total += company.total_jobs_in_hospital)
+    return total;
   }
 
   return (
@@ -46,7 +81,7 @@ const Index = () => {
 
       <SearchBar onKeyEnter={updateQuery} value={searchValue} />
 
-      <div className="flex">
+      <div className="job-container">
         <div className="filters-container">
           FILTER BOX
         </div>
@@ -60,7 +95,7 @@ const Index = () => {
             </div>
 
           </div>
-          CompaniesList
+          <CompanyList companies={jobs} />
         </div>
       </div>
     </>
