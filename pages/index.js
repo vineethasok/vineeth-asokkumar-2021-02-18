@@ -16,7 +16,7 @@ const Index = () => {
 
   let sortUrlParams = {}
   let sortOptions = ["location", "job_title", "department", "required_credentials", "experience"]
-
+  let sortOptionsName = ["Location", "Role", "Department", "Education", "Experience"]
 
   if (router.query.sort) {
     let sort = router.query.sort
@@ -55,7 +55,7 @@ const Index = () => {
             <p className="font-bold">{totalPostings()} Job Postings</p>
             <div className="hidden md:flex justify-end">
               {sortOptions.map((sortElement, index) => <>
-                <SortElement name={sortElement} value={sortUrlParams[sortElement]} sortFn={updateSort} key={index} />
+                <SortElement name={sortElement} title={sortOptionsName[index]} value={sortUrlParams[sortElement]} sortFn={updateSort} key={index} />
               </>)}
             </div>
 

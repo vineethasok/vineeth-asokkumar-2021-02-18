@@ -1,6 +1,6 @@
 import React from 'react'
 
-const SortElement = ({ name, value, sortFn}) => {
+const SortElement = ({ name, title, value, sortFn}) => {
   let sortClass = "arrow";
   if (value) {
     sortClass += ` ${value}`;
@@ -21,8 +21,8 @@ const SortElement = ({ name, value, sortFn}) => {
   }
 
   return (
-    <div className="" key={name} onClick={() => sortNow() }>
-      {name} <i className={sortClass}></i>
+    <div className="cursor-pointer" key={name} onClick={() => sortNow() }>
+      {title} <i className={sortClass}></i>
     </div>
   )
 }
