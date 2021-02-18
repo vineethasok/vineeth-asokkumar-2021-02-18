@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+html, body {
+  @apply p-0 m-0;
+}
+
+body {
+  @apply bg-gray-100;
+}
+
+.body-container {
+  min-height: 70vh;
+}
+
 nav {
   @apply bg-white relative;
 }
@@ -41,4 +53,8 @@ nav {
   #mobile-contents.active {
     @apply hidden !important;
   }
+}
+
+footer {
+  @apply bg-white relative pt-1 pb-4 ;
 }
