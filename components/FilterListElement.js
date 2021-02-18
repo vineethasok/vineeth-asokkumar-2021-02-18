@@ -14,7 +14,7 @@ const FilterListElement = ({items, name}) => {
   }
   return (
     <div className="filters mt-4 border bg-white">
-      <h2 class="uppercase font-bold">{name.toLowerCase().split("_").join(" ")}</h2>
+      <h2 className="uppercase font-bold mb-3">{name.toLowerCase().split("_").join(" ")}</h2>
       <div className="flex flex-col">
         {minifiedList.map((item, index) => (
         <a href="#" key={index} className="filter-link">{item.key} <span className="sub">{item.doc_count}</span></a>

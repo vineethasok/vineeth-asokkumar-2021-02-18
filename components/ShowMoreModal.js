@@ -9,11 +9,11 @@ const ShowMoreModal = ({items, name}) => {
     <div>
       <button className="text-blue-800" onClick={() => toggleModal()}>Show more</button>
 
-      <div id="myModal" class="modal hidden">
-        <div class="modal-content">
+      <div id="myModal" className="modal hidden">
+        <div className="modal-content">
           <div className="name flex justify-between border-b border-solid border-gray-500 items-center mb-4">
             <h2>{name}</h2>
-            <span class="close" onClick={() => toggleModal()}>&times;</span>
+            <span className="close" onClick={() => toggleModal()}>&times;</span>
           </div>
           <div className="items grid grid-cols-4 gap-2">
             {items.map((item, index) => (

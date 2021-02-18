@@ -79,21 +79,22 @@ footer {
 
 
 i.arrow {
-  height: 20px;
-  width: 1px;
   @apply inline-block;
 }
 
-.arrow.left, .arrow.right {
-  @apply border-0 border-l border-solid border-black;
+.arrow.asc, .arrow.desc {
+  @apply border-0 border-r-2 border-b-2 border-solid border-black;
+   padding: 3px;
+   margin-bottom: 3px;
 }
-.arrow.left {
-  content: "V";
-  transform: rotate(-45deg);
+.arrow.asc {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
 }
 
-.arrow.right {
-  transform: rotate(45deg) translate(6px, -6px);
+.arrow.desc {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
 }
 
 .job-container {
